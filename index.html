@@ -1729,114 +1729,128 @@ h3 {
   right: 0;
   bottom: 0;
   z-index: 1;
-  padding: 7px 14px 8px;
-  overflow: hidden;
-  color: #eaffff;
-  border: 1px solid rgba(66, 245, 255, 0.8);
-  border-radius: 2px;
-  background:
-    linear-gradient(105deg, rgba(43, 10, 83, 0.72), rgba(0, 220, 255, 0.13) 48%, rgba(255, 35, 241, 0.22)),
-    rgba(3, 9, 24, 0.74);
-  box-shadow:
-    0 0 4px rgba(76, 245, 255, 0.92),
-    0 0 17px rgba(0, 224, 255, 0.52),
-    inset 0 0 13px rgba(100, 248, 255, 0.16);
+  isolation: isolate;
+  display: inline-block;
+  color: #f1ffff;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
   font: 900 clamp(18px, 1.65vw, 27px) / 1.05 Arial, "Microsoft YaHei", sans-serif;
   letter-spacing: 0.1em;
   white-space: nowrap;
   text-shadow:
-    -1px 0 0 #ff34ea,
-    1px 0 0 #31f8ff,
-    0 0 7px rgba(106, 253, 255, 0.95),
-    0 0 18px rgba(0, 220, 255, 0.72);
-  transform: perspective(360px) rotateX(4deg) rotateY(-8deg);
+    -2px 0 0 rgba(255, 28, 218, 0.9),
+    2px 0 0 rgba(39, 245, 255, 0.95),
+    0 0 8px rgba(77, 244, 255, 0.72);
   transform-origin: right center;
-  animation:
-    cyber-rank-float 3.2s ease-in-out infinite,
-    cyber-rank-flicker 4.8s steps(1, end) infinite;
+  animation: cyber-rank-jitter 4.2s steps(1, end) infinite;
 }
 
 .education-fact > .cyber-rank::before {
   position: absolute;
   inset: 0;
   content: attr(data-text);
-  color: transparent;
-  background:
-    repeating-linear-gradient(
-      180deg,
-      transparent 0 3px,
-      rgba(135, 255, 255, 0.32) 4px,
-      transparent 5px 7px
-    );
-  background-clip: text;
-  -webkit-background-clip: text;
+  z-index: -1;
+  color: #26f4ff;
+  background: transparent;
   pointer-events: none;
-  transform: translateX(1px);
+  text-shadow: 2px 0 5px rgba(38, 244, 255, 0.78);
+  clip-path: inset(0 0 62% 0);
+  animation: cyber-rank-glitch-cyan 2.9s steps(1, end) infinite;
 }
 
 .education-fact > .cyber-rank::after {
   position: absolute;
-  top: -35%;
-  bottom: -35%;
-  left: -32%;
-  width: 24%;
-  content: "";
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(216, 255, 255, 0.9),
-    rgba(78, 242, 255, 0.18),
-    transparent
-  );
-  filter: blur(1px);
+  inset: 0;
+  content: attr(data-text);
+  z-index: -2;
+  color: #ff27d7;
+  background: transparent;
   pointer-events: none;
-  transform: skewX(-18deg);
-  animation: cyber-rank-scan 2.7s linear infinite;
+  text-shadow: -2px 0 5px rgba(255, 39, 215, 0.72);
+  clip-path: inset(58% 0 8% 0);
+  animation: cyber-rank-glitch-magenta 2.35s steps(1, end) infinite;
 }
 
-@keyframes cyber-rank-float {
+@keyframes cyber-rank-jitter {
   0%,
+  82%,
+  88%,
+  94%,
   100% {
-    transform: perspective(360px) translateY(0) rotateX(4deg) rotateY(-8deg);
+    transform: translate(0, 0) skewX(0);
   }
 
-  50% {
-    transform: perspective(360px) translateY(-5px) rotateX(1deg) rotateY(-4deg);
+  83% {
+    transform: translate(-2px, 1px) skewX(5deg);
+  }
+
+  84% {
+    transform: translate(3px, -1px) skewX(-7deg);
+  }
+
+  86% {
+    transform: translate(-1px, 0) skewX(2deg);
+  }
+
+  95% {
+    transform: translate(2px, 1px) skewX(-4deg);
   }
 }
 
-@keyframes cyber-rank-flicker {
+@keyframes cyber-rank-glitch-cyan {
   0%,
-  92%,
-  96%,
+  72%,
+  76%,
   100% {
-    opacity: 1;
-    filter: none;
+    clip-path: inset(0 0 62% 0);
+    transform: translate(0);
   }
 
-  93% {
-    opacity: 0.72;
-    filter: hue-rotate(42deg);
+  73% {
+    clip-path: inset(18% 0 55% 0);
+    transform: translate(5px, -1px);
   }
 
-  94% {
-    opacity: 0.96;
-    filter: hue-rotate(-24deg);
+  74% {
+    clip-path: inset(70% 0 6% 0);
+    transform: translate(-4px, 1px);
+  }
+
+  75% {
+    clip-path: inset(42% 0 32% 0);
+    transform: translate(3px);
   }
 }
 
-@keyframes cyber-rank-scan {
-  from {
-    left: -32%;
+@keyframes cyber-rank-glitch-magenta {
+  0%,
+  58%,
+  64%,
+  100% {
+    clip-path: inset(58% 0 8% 0);
+    transform: translate(0);
   }
 
-  to {
-    left: 118%;
+  59% {
+    clip-path: inset(6% 0 74% 0);
+    transform: translate(-5px);
+  }
+
+  61% {
+    clip-path: inset(48% 0 24% 0);
+    transform: translate(4px, 1px);
+  }
+
+  63% {
+    clip-path: inset(78% 0 2% 0);
+    transform: translate(-3px, -1px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .education-fact > .cyber-rank,
+  .education-fact > .cyber-rank::before,
   .education-fact > .cyber-rank::after {
     animation: none;
   }
