@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://3241445250-glitch.github.io/zhang-zhiqiang-portfolio/sitemap.xml
