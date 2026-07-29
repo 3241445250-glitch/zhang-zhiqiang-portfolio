@@ -19,6 +19,8 @@ html {
   min-width: 320px;
   color-scheme: light;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -2567,6 +2569,33 @@ body:has(.contact:target) {
   }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .works .category-panel .ink-particles {
+    display: none;
+  }
+
+  .works .category-panel .ink-spray:hover,
+  .works .category-panel .ink-spray:focus {
+    animation: none;
+    filter: none;
+  }
+
+  .works .work-card:hover {
+    border-color: rgba(242, 238, 229, 0.74);
+    filter: none;
+    transform: none;
+  }
+
+  .works .work-card:hover::after {
+    transform: scaleX(0);
+  }
+
+  .works .work-card:hover .still {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
 @media (max-width: 960px) {
   body::before {
     display: none;
@@ -2785,6 +2814,21 @@ body:has(.contact:target) {
   .category-panel .still {
     aspect-ratio: 16 / 7;
     min-height: 180px;
+  }
+
+  .works .category-panel h3 {
+    width: calc(100% - 32px);
+    max-width: 560px;
+    padding-inline: 8px;
+    font-family:
+      "STKaiti", "KaiTi", "Songti SC", "PingFang SC",
+      "Microsoft YaHei", "Noto Serif CJK SC", serif !important;
+    font-size: clamp(28px, 8.5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: 0;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    text-wrap: balance;
   }
 
   .stage-curtain {
