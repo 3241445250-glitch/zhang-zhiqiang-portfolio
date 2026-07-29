@@ -1253,6 +1253,80 @@ h2 {
   margin-bottom: clamp(22px, 3vw, 36px);
 }
 
+.prompt-skill-page .short-drama-hero h1 {
+  font-size: clamp(46px, 7vw, 96px);
+  line-height: 0.98;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  text-wrap: balance;
+}
+
+.prompt-document-card {
+  min-height: clamp(108px, 10vw, 142px);
+  padding: clamp(16px, 2vw, 26px);
+  border: 1px solid rgba(242, 238, 229, 0.25);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(14px, 2vw, 24px);
+  color: var(--paper);
+  background:
+    linear-gradient(115deg, rgba(189, 51, 41, 0.12), transparent 44%),
+    rgba(18, 11, 12, 0.9);
+  text-decoration: none;
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.prompt-document-card:hover,
+.prompt-document-card:focus-visible {
+  border-color: rgba(242, 238, 229, 0.72);
+  transform: translateY(-3px);
+}
+
+.prompt-document-type {
+  width: clamp(58px, 6vw, 78px);
+  aspect-ratio: 0.82 / 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(242, 238, 229, 0.64);
+  color: var(--red);
+  background: rgba(242, 238, 229, 0.07);
+  font: 700 clamp(10px, 1vw, 13px) / 1 Arial, "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.prompt-document-copy {
+  min-width: 0;
+}
+
+.prompt-document-copy strong {
+  display: block;
+  font: 700 clamp(20px, 2.6vw, 36px) / 1.25 STKaiti, KaiTi, FZKai-Z03, DFKai-SB, "FangSong", serif;
+}
+
+.prompt-document-copy small {
+  margin-top: 9px;
+  display: block;
+  color: rgba(242, 238, 229, 0.5);
+  font: 8px/1.2 Arial, "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.16em;
+}
+
+.prompt-document-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(242, 238, 229, 0.66);
+  font: 700 clamp(11px, 1vw, 14px) / 1 Arial, "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.prompt-document-action i {
+  color: var(--red);
+  font: normal 20px/1 Georgia, "Times New Roman", serif;
+}
+
 .trial-project-folder {
   border: 1px solid rgba(242, 238, 229, 0.25);
   background:
@@ -3006,6 +3080,34 @@ body:has(.contact:target) {
   .trial-project-count {
     grid-column: 1 / -1;
     justify-content: flex-end;
+  }
+
+  .prompt-skill-page .short-drama-hero h1 {
+    font-size: clamp(36px, 11vw, 58px);
+    line-height: 1.08;
+  }
+
+  .prompt-document-card {
+    padding: 16px 14px;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px 12px;
+  }
+
+  .prompt-document-type {
+    width: 52px;
+  }
+
+  .prompt-document-copy strong {
+    font-size: clamp(18px, 5.8vw, 28px);
+    overflow-wrap: normal;
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+
+  .prompt-document-action {
+    grid-column: 1 / -1;
+    justify-self: end;
+    font-size: 11px;
   }
 }
 
