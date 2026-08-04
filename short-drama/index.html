@@ -1772,14 +1772,17 @@ h3 {
   isolation: isolate;
   margin: 0 0.12em;
   display: inline-block;
-  color: #a9adb3;
+  color: #e3e5e7;
   font: 900 clamp(25px, 2.65vw, 41px) / 1.08 STKaiti, KaiTi, FZKai-Z03, DFKai-SB, "FangSong", serif;
   letter-spacing: 0.035em;
   text-shadow:
-    -0.045em 0 rgba(103, 107, 113, 0.52),
-    0.045em 0 rgba(188, 192, 198, 0.34),
-    0 0 0.48em rgba(139, 144, 151, 0.34);
-  filter: drop-shadow(0 0.16em 0.2em rgba(0, 0, 0, 0.48));
+    -0.045em 0 rgba(67, 71, 77, 0.9),
+    0.045em 0 rgba(104, 109, 116, 0.82),
+    0 0 0.28em rgba(238, 240, 242, 0.62),
+    0 0.1em 0.14em rgba(0, 0, 0, 0.72);
+  filter:
+    drop-shadow(0 0.06em 0.05em rgba(255, 255, 255, 0.26))
+    drop-shadow(0 0.18em 0.22em rgba(0, 0, 0, 0.58));
   animation: production-credit-float 3.4s ease-in-out infinite;
 }
 
@@ -1799,20 +1802,20 @@ h3 {
 }
 
 .production-credit::before {
-  color: rgba(117, 121, 127, 0.74);
-  text-shadow: -0.06em 0 rgba(99, 103, 109, 0.62);
+  color: rgba(153, 158, 165, 0.78);
+  text-shadow: -0.06em 0 rgba(93, 98, 105, 0.7);
   animation: production-credit-glitch-a 3.8s steps(1, end) infinite;
 }
 
 .production-credit::after {
-  color: rgba(190, 194, 200, 0.6);
-  text-shadow: 0.06em 0 rgba(170, 174, 181, 0.56);
+  color: rgba(235, 237, 239, 0.68);
+  text-shadow: 0.06em 0 rgba(202, 206, 211, 0.64);
   animation: production-credit-glitch-b 3.8s steps(1, end) -0.08s infinite;
 }
 
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {
   .production-credit {
-    background: linear-gradient(102deg, #777c83 8%, #b7bbc1 32%, #979ca3 48%, #6f747b 64%, #aeb2b8 86%);
+    background: linear-gradient(102deg, #b8bcc1 8%, #f1f2f3 30%, #d5d8dc 46%, #a8adb4 63%, #eceeef 84%);
     background-size: 230% 100%;
     background-clip: text;
     -webkit-background-clip: text;
