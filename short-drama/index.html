@@ -1772,7 +1772,7 @@ h3 {
   isolation: isolate;
   margin: 0 0.12em;
   display: inline-block;
-  color: #e3e5e7;
+  color: #ffffff;
   font: 900 clamp(25px, 2.65vw, 41px) / 1.08 STKaiti, KaiTi, FZKai-Z03, DFKai-SB, "FangSong", serif;
   letter-spacing: 0.035em;
   text-shadow:
@@ -1815,19 +1815,14 @@ h3 {
 
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {
   .production-credit {
-    background: linear-gradient(102deg, #b8bcc1 8%, #f1f2f3 30%, #d5d8dc 46%, #a8adb4 63%, #eceeef 84%);
-    background-size: 230% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation:
-      production-credit-float 3.4s ease-in-out infinite,
-      production-credit-shine 4.8s ease-in-out infinite;
+    background: none;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    animation: production-credit-float 3.4s ease-in-out infinite;
   }
 
   .production-credit-title {
-    animation-delay: -1.15s, -2.1s;
+    animation-delay: -1.15s;
   }
 }
 
@@ -2553,11 +2548,6 @@ body:has(.contact:target) {
   0%, 100% { transform: translate3d(0, 0, 0) skewX(0); }
   48% { transform: translate3d(0, -0.08em, 0) skewX(-1deg); }
   52% { transform: translate3d(0.025em, -0.08em, 0) skewX(1deg); }
-}
-
-@keyframes production-credit-shine {
-  0%, 18% { background-position: 100% 50%; }
-  48%, 100% { background-position: -110% 50%; }
 }
 
 @keyframes production-credit-glitch-a {
