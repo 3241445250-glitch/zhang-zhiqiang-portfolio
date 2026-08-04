@@ -1639,8 +1639,8 @@ h3 {
   color: var(--paper);
   background: var(--ink);
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(40px, 8vw, 130px);
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(40px, 6vw, 100px);
 }
 
 .about::before {
@@ -1745,7 +1745,7 @@ h3 {
 
 .about-copy {
   align-self: end;
-  max-width: 640px;
+  max-width: 760px;
   padding-top: clamp(120px, 18vh, 240px);
 }
 
@@ -1764,7 +1764,16 @@ h3 {
 }
 
 .about-copy .employment-copy {
-  line-height: 1.9;
+  margin-bottom: 30px;
+  padding: clamp(20px, 2.4vw, 34px) 0;
+  color: #ddd9d1;
+  border-top: 1px solid rgba(242, 238, 229, 0.26);
+  border-bottom: 1px solid rgba(242, 238, 229, 0.18);
+  font-size: clamp(20px, 1.55vw, 26px);
+  font-weight: 500;
+  line-height: 1.86;
+  letter-spacing: 0.018em;
+  text-wrap: pretty;
 }
 
 .production-credit {
@@ -2920,15 +2929,23 @@ body:has(.contact:target) {
 
   .production-credit {
     margin-inline: 0.08em;
-    font-size: clamp(19px, 5.8vw, 25px);
+    font-size: clamp(21px, 6.2vw, 27px);
   }
 
   .production-credit-title {
-    font-size: clamp(17px, 5vw, 22px);
+    font-size: clamp(20px, 5.8vw, 25px);
     letter-spacing: 0;
     max-width: 100%;
     line-height: 1.24;
     white-space: normal;
+  }
+
+  .about-copy .employment-copy {
+    margin-bottom: 24px;
+    padding-block: 20px;
+    font-size: clamp(18px, 5vw, 21px);
+    line-height: 1.82;
+    letter-spacing: 0.012em;
   }
 
   .hero-caption {
