@@ -2309,23 +2309,24 @@ h3 {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 24px;
+  grid-template-columns: 1fr;
+  gap: 13px;
   list-style: none;
 }
 
 .coach-duties li {
   position: relative;
-  padding-left: 19px;
+  padding-left: 24px;
   color: var(--muted);
-  font: 13px/1.75 var(--font-brush-body);
+  font: 600 clamp(17px, 1.2vw, 20px) / 1.72 var(--font-brush-body);
+  letter-spacing: 0.012em;
 }
 
 .coach-duties li::before {
   position: absolute;
   top: 0.78em;
   left: 0;
-  width: 8px;
+  width: 11px;
   height: 2px;
   content: "";
   background: var(--red);
