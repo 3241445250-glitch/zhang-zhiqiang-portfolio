@@ -2579,6 +2579,28 @@ body:has(.contact:target) {
   padding: 8px 0;
 }
 
+.site-registration {
+  grid-column: 1 / -1;
+  margin: 2px 0 0;
+  color: rgba(242, 238, 229, 0.72);
+  font: 500 clamp(13px, 0.95vw, 16px) / 1.5 var(--font-brush-body);
+  letter-spacing: 0.04em;
+}
+
+.site-registration a {
+  display: inline-block;
+  padding: 6px 0;
+  text-decoration: none;
+  text-underline-offset: 0.28em;
+  transition: color 180ms ease;
+}
+
+.site-registration a:hover,
+.site-registration a:focus-visible {
+  color: var(--paper);
+  text-decoration: underline;
+}
+
 @keyframes grain-shift {
   0% { transform: translate3d(-1.5%, -1%, 0); }
   25% { transform: translate3d(1%, -1.5%, 0); }
