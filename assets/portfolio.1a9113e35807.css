@@ -1831,15 +1831,32 @@ h3 {
 
 .about-copy .employment-copy {
   margin-bottom: 30px;
-  padding: clamp(20px, 2.4vw, 34px) 0;
   color: #ddd9d1;
   border-top: 1px solid rgba(242, 238, 229, 0.26);
   border-bottom: 1px solid rgba(242, 238, 229, 0.18);
+  display: grid;
   font-size: clamp(20px, 1.55vw, 26px);
   font-weight: 500;
   line-height: 1.86;
   letter-spacing: 0.018em;
   text-wrap: pretty;
+}
+
+.about-copy .employment-entry {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(20px, 2.4vw, 34px) 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.about-copy .employment-entry + .employment-entry {
+  border-top: 1px solid rgba(242, 238, 229, 0.12);
+}
+
+.about-copy .employment-entry-production {
+  padding-block: clamp(26px, 3vw, 42px);
 }
 
 .production-credit {
@@ -3101,10 +3118,17 @@ body:has(.contact:target) {
 
   .about-copy .employment-copy {
     margin-bottom: 24px;
-    padding-block: 20px;
     font-size: clamp(18px, 5vw, 21px);
     line-height: 1.82;
     letter-spacing: 0.012em;
+  }
+
+  .about-copy .employment-entry {
+    padding-block: 20px;
+  }
+
+  .about-copy .employment-entry-production {
+    padding-block: 24px;
   }
 
   .hero-caption {
