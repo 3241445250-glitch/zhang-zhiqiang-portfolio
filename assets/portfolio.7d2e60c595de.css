@@ -111,18 +111,10 @@ textarea {
   padding: 0 var(--pad);
   border-bottom: 1px solid var(--ink);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 1fr;
   align-items: center;
   column-gap: 22px;
   font-family: var(--font-brush-body);
-}
-
-.edition {
-  margin: 0;
-  justify-self: start;
-  color: var(--muted);
-  font: 12px/1 Georgia, "Times New Roman", "LXGW WenKai Portfolio", serif;
-  letter-spacing: 0.14em;
 }
 
 .nav {
@@ -580,6 +572,12 @@ h1 .latin-name {
   display: flex;
   gap: 26px;
   flex-wrap: wrap;
+}
+
+.hero-link-group .text-link {
+  padding-bottom: 8px;
+  font-size: clamp(22px, 2.2vw, 34px);
+  line-height: 1.2;
 }
 
 .availability {
