@@ -876,6 +876,7 @@ h1 .latin-name {
 
 .works .section-head {
   border-bottom-color: rgba(242, 238, 229, 0.34);
+  grid-template-columns: minmax(0, 1fr) auto;
 }
 
 .works .section-note {
@@ -1797,7 +1798,7 @@ h3 {
 }
 
 .about-intro h2 {
-  margin-top: 28px;
+  margin-top: 0;
   max-width: 720px;
   font-size: clamp(40px, 5vw, 78px);
   line-height: 0.98;
@@ -1887,10 +1888,6 @@ h3 {
 .production-credit-tail {
   display: inline-block;
   white-space: nowrap;
-}
-
-.production-credit-title-ending {
-  margin-right: 0.08em;
 }
 
 .production-credit-suffix {
@@ -2302,7 +2299,7 @@ h3 {
 
 .coach-copy h2 {
   max-width: 780px;
-  margin: 28px 0 34px;
+  margin: 0 0 34px;
   font-size: clamp(42px, 5vw, 82px);
   line-height: 1.03;
 }
@@ -2410,7 +2407,7 @@ h3 {
 
 .coach-metrics span {
   color: var(--muted);
-  font: 11px/1.4 var(--font-brush-body);
+  font: 600 clamp(16px, 1.35vw, 21px) / 1.4 var(--font-brush-body);
 }
 
 .coach-credentials {
@@ -2547,7 +2544,7 @@ h3 {
   color: var(--paper);
   background: var(--ink);
   display: grid;
-  grid-template-columns: minmax(150px, 0.72fr) minmax(0, 2.28fr);
+  grid-template-columns: 1fr;
   align-items: center;
   gap: var(--gap);
   position: relative;
@@ -2562,7 +2559,7 @@ h3 {
   position: fixed;
   z-index: 100;
   inset: clamp(18px, 7vw, 92px);
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: 1fr;
   align-content: center;
   overflow-y: auto;
   padding: clamp(38px, 6vw, 84px);
