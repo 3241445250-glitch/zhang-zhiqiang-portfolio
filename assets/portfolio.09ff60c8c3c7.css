@@ -204,6 +204,13 @@ textarea {
   min-width: 0;
 }
 
+.hero-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
 .kicker,
 .eyebrow {
   color: var(--red);
@@ -249,15 +256,6 @@ h1:hover {
   color: var(--red);
   text-shadow: 7px 5px 0 rgba(23, 23, 20, 0.13);
   transform: translate(-2px, -2px);
-}
-
-h1 .latin-name {
-  display: block;
-  margin: 20px 0 0 8px;
-  color: var(--muted);
-  font: italic clamp(12px, 1.2vw, 18px) / 1 Georgia, "Times New Roman",
-    "LXGW WenKai Portfolio", serif;
-  letter-spacing: 0.11em;
 }
 
 .ink-display,
@@ -384,12 +382,11 @@ h1 .latin-name {
 .ink-particles b:nth-child(16) { --ink-index: 16; --ix: 57%; --iy: 92%; --idx: 0.8em; --idy: 2.2em; }
 
 .hero-illustration {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: -18px;
-  right: 0;
   width: clamp(150px, 19vw, 270px);
   margin: 0;
+  justify-self: end;
   pointer-events: none;
   transform: rotate(3deg);
   transform-origin: 50% 60%;
@@ -2934,10 +2931,13 @@ body:has(.contact:target) {
     min-height: auto;
   }
 
+  .hero-heading {
+    grid-template-columns: minmax(0, 1fr) clamp(120px, 23vw, 190px);
+    gap: clamp(18px, 4vw, 42px);
+  }
+
   .hero-illustration {
-    top: 6px;
-    right: -22px;
-    width: clamp(120px, 23vw, 190px);
+    width: 100%;
     opacity: 1 !important;
     -webkit-filter: none !important;
     filter: none !important;
@@ -3078,14 +3078,14 @@ body:has(.contact:target) {
     font-size: clamp(44px, 14vw, 68px);
   }
 
-  h1 .latin-name {
-    margin-left: 4px;
+  .hero-heading {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    gap: 10px;
+    align-items: start;
   }
 
   .hero-illustration {
-    top: 20px;
-    right: -34px;
-    width: 118px;
+    width: 100%;
     opacity: 1 !important;
   }
 
