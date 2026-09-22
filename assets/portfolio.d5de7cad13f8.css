@@ -211,6 +211,10 @@ textarea {
   align-items: center;
 }
 
+.hero-heading h1 {
+  top: -42px;
+}
+
 .kicker,
 .eyebrow {
   color: var(--red);
@@ -2997,6 +3001,10 @@ body:has(.contact:target) {
     gap: clamp(18px, 4vw, 42px);
   }
 
+  .hero-heading h1 {
+    top: -6px;
+  }
+
   .hero-illustration {
     width: 100%;
     opacity: 1 !important;
@@ -3167,6 +3175,10 @@ body:has(.contact:target) {
     grid-template-columns: minmax(0, 1fr) 96px;
     gap: 10px;
     align-items: start;
+  }
+
+  .hero-heading h1 {
+    top: clamp(7px, calc(28.5px - 3.5vw), 15px);
   }
 
   .hero-illustration {
