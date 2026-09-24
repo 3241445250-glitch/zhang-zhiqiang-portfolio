@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>提示词工程｜张智强作品集</title>
+    <style>
+      @font-face {
+        font-family: "Portfolio WenKai";
+        src: url("../fonts/lxgw-wenkai-500.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      :root {
+        color-scheme: dark;
+        font-family: "Portfolio WenKai", "Kaiti SC", KaiTi, serif;
+        background: #0c0809;
+        color: #f2eee5;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: linear-gradient(145deg, #231114 0%, #0c0809 38%, #050304 100%);
+      }
+
+      header {
+        min-height: 64px;
+        padding: 16px clamp(20px, 5vw, 64px);
+        border-bottom: 1px solid rgba(242, 238, 229, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      a { color: inherit; }
+
+      header a {
+        font-size: clamp(14px, 2vw, 17px);
+        text-decoration: none;
+      }
+
+      main {
+        width: min(100% - 32px, 920px);
+        margin: 0 auto;
+        padding: clamp(38px, 7vw, 80px) 0 80px;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: #d85d53;
+        font-size: 13px;
+        letter-spacing: 0.16em;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(27px, 5vw, 54px);
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+      }
+
+      .rule {
+        height: 1px;
+        margin: 26px 0;
+        background: linear-gradient(90deg, #bd3329, rgba(242, 238, 229, 0.3), transparent);
+      }
+
+      .actions {
+        margin-bottom: 22px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .actions a {
+        padding: 9px 14px;
+        border: 1px solid rgba(242, 238, 229, 0.38);
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .actions a:hover,
+      .actions a:focus-visible {
+        border-color: #f2eee5;
+      }
+
+      pre {
+        margin: 0;
+        padding: clamp(18px, 4vw, 38px);
+        border: 1px solid rgba(242, 238, 229, 0.2);
+        background: rgba(5, 3, 4, 0.76);
+        color: #f2eee5;
+        font: 17px/1.85 "Portfolio WenKai", "Kaiti SC", KaiTi, serif;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 620px) {
+        header { align-items: flex-start; }
+        pre { font-size: 16px; line-height: 1.75; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../">张智强作品集</a>
+      <a href="../prompt-skill/">← 返回提示词工程</a>
+    </header>
+    <main>
+      <p class="eyebrow">SYSTEM PROMPT / SKILL</p>
+      <h1 id="document-title">提示词工程</h1>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="actions"><a id="download" href="#" download hidden>下载原始 MD</a></div>
+      <pre id="document-content" aria-live="polite">正在加载文档…</pre>
+    </main>
+    <script>
+      const documents = {
+        storyboard: {
+          title: "分镜表导演（剧本转分镜表）",
+          file: "storyboard-director-script-to-shot-list.md",
+        },
+        s2: {
+          title: "S2提示词导演（分镜表转提示词）",
+          file: "s2-prompt-director-shot-list-to-prompt.md",
+        },
+      };
+
+      const key = new URLSearchParams(location.search).get("doc");
+      const documentInfo = Object.prototype.hasOwnProperty.call(documents, key)
+        ? documents[key]
+        : null;
+      const title = document.getElementById("document-title");
+      const content = document.getElementById("document-content");
+      const download = document.getElementById("download");
+
+      if (!documentInfo) {
+        content.textContent = "未找到该文档。";
+      } else {
+        title.textContent = documentInfo.title;
+        document.title = `${documentInfo.title}｜张智强作品集`;
+        download.href = documentInfo.file;
+        download.download = `${documentInfo.title}.md`;
+        download.hidden = false;
+
+        fetch(documentInfo.file)
+          .then((response) => {
+            if (!response.ok) throw new Error("Document unavailable");
+            return response.arrayBuffer();
+          })
+          .then((bytes) => {
+            content.textContent = new TextDecoder("utf-8").decode(bytes);
+          })
+          .catch(() => {
+            content.textContent = "文档暂时无法加载，请稍后重试或下载原始 MD。";
+          });
+      }
+    </script>
+  </body>
+</html>
