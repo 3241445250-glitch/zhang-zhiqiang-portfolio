@@ -112,7 +112,7 @@
       <p class="eyebrow">SYSTEM PROMPT / SKILL</p>
       <h1 id="document-title">提示词工程</h1>
       <div class="rule" aria-hidden="true"></div>
-      <div class="actions"><a id="download" href="#" download hidden>下载原始 MD</a></div>
+      <div class="actions"><a id="download" href="#" download hidden>下载原始文件</a></div>
       <pre id="document-content" aria-live="polite">正在加载文档…</pre>
     </main>
     <script>
@@ -124,6 +124,10 @@
         s2: {
           title: "S2提示词导演（分镜表转提示词）",
           file: "s2-prompt-director-shot-list-to-prompt.md",
+        },
+        image: {
+          title: "生图提示词助手",
+          file: "image-generation-prompt-assistant.txt",
         },
       };
 
@@ -141,7 +145,9 @@
         title.textContent = documentInfo.title;
         document.title = `${documentInfo.title}｜张智强作品集`;
         download.href = documentInfo.file;
-        download.download = `${documentInfo.title}.md`;
+        const extension = documentInfo.file.split(".").pop().toLowerCase();
+        download.download = `${documentInfo.title}.${extension}`;
+        download.textContent = `下载原始 ${extension.toUpperCase()}`;
         download.hidden = false;
 
         fetch(documentInfo.file)
@@ -153,7 +159,7 @@
             content.textContent = new TextDecoder("utf-8").decode(bytes);
           })
           .catch(() => {
-            content.textContent = "文档暂时无法加载，请稍后重试或下载原始 MD。";
+            content.textContent = "文档暂时无法加载，请稍后重试或下载原始文件。";
           });
       }
     </script>
