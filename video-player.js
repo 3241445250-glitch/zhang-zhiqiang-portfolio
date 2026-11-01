@@ -17,7 +17,9 @@
   function fitPlayer() {
     if (!dialog.open || !player.videoWidth || !player.videoHeight) return;
     const bounds = stage.getBoundingClientRect();
-    const scale = Math.min(bounds.width / player.videoWidth, bounds.height / player.videoHeight);
+    // Never enlarge a low-resolution source beyond its native pixels: a
+    // bigger box cannot create detail that the uploaded file does not have.
+    const scale = Math.min(1, bounds.width / player.videoWidth, bounds.height / player.videoHeight);
     if (scale <= 0) return;
     // Use decoded display dimensions, including orientation metadata. Never
     // substitute a fixed landscape/portrait ratio or crop the source image.
